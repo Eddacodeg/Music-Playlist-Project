@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset = "UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Playlist</title>
-    <link rel="'stylesheet" href="styles.css">
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Jams</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
-    <h1>My Songs</h1>
-    <p class="subtitle">A linked list playlist</p>
-    <div class="card">
-        <h2>Add a Song!</h2>
-        <div class="form-row">
-            <input type="text" id="input-title" placeholder="Song title">
-            <input type="text" id="input-artist" placeholder="Artist name">
-            <div id= "error=msg"></div>
-            <button class="btn-add" onclick="addsong()">+ Add to Playlist</button>
-            </div>
-        </div>
-    </div>
 
-    <div id = "Now-Playing-banner"
+  <h1>My Songs</h1>
+  <p class="subtitle">A linked list playlist</p>
+
+  <div class="card">
+    <h2>Add a Song</h2>
+    <div class="form-row">
+      <input type="text" id="input-title" placeholder="Song title" />
+      <input type="text" id="input-artist" placeholder="Artist name" />
+      <div id="error-msg"></div>
+      <button class="btn-add" onclick="addSong()">+ Add to Playlist</button>
+    </div>
+  </div>
+
+  <div id="now-playing-banner">
+    <div class="np-icon">▶️</div>
+    <div class="np-text">
+      <div class="np-label">Now Playing</div>
+      <div class="np-title" id="np-title"></div>
+      <div class="np-artist" id="np-artist"></div>
+    </div>
+    <div class="np-controls">
+      <button class="btn-next" onclick="nextSong()">Next ▶</button>
+      <button class="btn-stop" onclick="stopPlayback()">■ Stop</button>
+    </div>
+  </div>
+
+  <div id="finished-msg">Playlist finished!</div>
+
+  <div id="playlist-container">
+    <div class="playlist-header">
+      <h2>Playlist</h2>
+      <span class="song-count" id="song-count">0 songs</span>
+    </div>
+    <div id="playlist-list">
+      <div class="empty-state">No songs yet. Add one above!</div>
+    </div>
+    <div style="margin-top: 16px;">
+      <button class="btn-play" id="btn-play" onclick="startPlayback()" disabled>▶ Play All</button>
+    </div>
+  </div>
+
+  <script src="playlist.js"></script>
 </body>
+</html>
